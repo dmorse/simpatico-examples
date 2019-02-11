@@ -1,0 +1,23 @@
+System:
+
+    800 atoms with WCA (repulsive Lennard-Jones) interactions
+
+Usage:
+
+   Run and restart MC simulation using run script.
+
+       ./run [log]
+
+     Outputs of the original run are output to subdirectory out/.
+     Outputs of the restarted run are output to subdirectory rst/ .
+     The optional [log] parameter, if present, specifies the name
+     of a log file. If absent, log information is written to the
+     screen.
+
+   NVE md simulation:
+   
+       mcSim -e -p param -c commands
+   
+   Restarting NVE or NVT MC simulations
+   
+       mcSim -e -r restart -c commands.rst -o rst/

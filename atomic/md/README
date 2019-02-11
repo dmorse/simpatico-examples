@@ -1,0 +1,23 @@
+System:
+
+    800 atoms with WCA (repulsive Lennard-Jones) interactions
+
+Usage:
+
+   Run and restart MD simulation using run script.
+
+       ./run [log]
+
+     Outputs of the original run are output to subdirectory out/.
+     Outputs of the restarted run are output to subdirectory rst/ .
+     The optional [log] parameter, if present, specifies the name
+     of a log file. If absent, log information is written to the
+     screen.
+
+   NVE md simulation:
+   
+       mdSim -e -p param -c commands
+   
+   Restarting NVE or NVT MD simulations
+   
+       mdSim -e -r restart -c commands.rst 

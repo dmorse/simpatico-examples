@@ -1,0 +1,4 @@
+#!/bin/bash
+ROOT=$PWD
+cd "$ROOT/N32"; ./clean
+cd "$ROOT/N8/mc"; ./clean

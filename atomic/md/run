@@ -1,0 +1,42 @@
+#!/bin/bash
+set -ev
+
+unset EXEC
+EXEC=mdSim 
+
+unset LOGFILE
+if [ $# -gt 0 ]; then
+   LOGFILE=$1
+fi
+
+# Make or clean directory out
+if [ ! -d "out" ]; then
+   mkdir out
+else
+   rm -f out/*
+fi
+
+# Run simulation
+if [ -z "$LOGFILE" ]; then
+   $EXEC -q -e -p param -c commands 
+else
+   $EXEC -q -e -p param -c commands > $LOGFILE
+   mv $LOGFILE out
+fi
+
+# Make or clean directory rst, if necessary
+if [ ! -d "rst" ]; then
+   mkdir rst
+else
+   rm -f rst/*
+fi
+
+# Restart simulation, write outputs to rst/
+if [ -z "$LOGFILE" ]; then
+   $EXEC -q -e -r restart -c commands.rst -o rst/ 
+else
+   $EXEC -q -e -r restart -c commands.rst -o rst/  > $LOGFILE
+   mv $LOGFILE rst
+fi
+
+

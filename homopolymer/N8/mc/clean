@@ -1,0 +1,10 @@
+#!/bin/bash
+ROOT=$PWD
+cd "$ROOT/atomDisplace"; ./clean
+cd "$ROOT/cfbDoubleRebridge"; ./clean
+cd "$ROOT/cfbEnd"; ./clean
+cd "$ROOT/cfbReptate"; ./clean
+cd "$ROOT/combine"; ./clean
+cd "$ROOT/hybridMd"; ./clean
+cd "$ROOT/generate"; ./clean
+

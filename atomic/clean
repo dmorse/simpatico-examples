@@ -1,0 +1,5 @@
+#!/bin/bash
+ROOT=$PWD
+cd "$ROOT/dd"; ./clean
+cd "$ROOT/mc"; ./clean
+cd "$ROOT/md"; ./clean

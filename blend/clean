@@ -1,0 +1,8 @@
+#!/bin/bash
+ROOT=$PWD
+cd "$ROOT/md"; ./clean
+cd "$ROOT/mc/combine"; ./clean
+cd "$ROOT/mc/hybrid"; ./clean
+cd "$ROOT/mcMulti"; ./clean
+cd "$ROOT/mcPerturb"; ./clean
+cd "$ROOT/mcReplica"; ./clean

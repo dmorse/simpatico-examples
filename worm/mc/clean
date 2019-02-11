@@ -1,0 +1,5 @@
+#!/bin/bash
+ROOT=$PWD
+cd "$ROOT/AtomDisp"; ./clean
+cd "$ROOT/HybridMd"; ./clean
+cd "$ROOT/Reptation"; ./clean

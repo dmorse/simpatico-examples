@@ -1,0 +1,18 @@
+    IntraPairAutoCorr{
+      interval                            1000
+      outputFileName         IntraPairAutoCorr
+      speciesId                              0
+      atom1Id                                0
+      atom2Id                                7
+      capacity                            1000
+    }
+
+nMolecule       100
+bufferCapacity  1000
+nSample         1001
+
+average    -2.51923474163936421e-02  2.14605762047096957e-02 -2.93008112455139802e-02
+
+Format of *.dat file
+[int time in samples]  [double autocorrelation function]
+

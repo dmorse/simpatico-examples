@@ -1,0 +1,5 @@
+    MdPressureAverage{
+      interval                             100
+      outputFileName                  pressure
+      nSamplePerBlock                       10
+    }

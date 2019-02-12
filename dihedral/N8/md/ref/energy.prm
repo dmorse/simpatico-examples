@@ -1,0 +1,5 @@
+    MdEnergyAnalyzer{
+      interval                            1000
+      outputFileName                    energy
+      nSamplePerBlock                      100
+    }

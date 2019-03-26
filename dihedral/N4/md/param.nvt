@@ -59,7 +59,7 @@ MdSimulation{
     BoundaryEnsemble{
       type                           rigid
     }
-    NveVvIntegrator{
+    NvtNhIntegrator{
        dt               5.000000000e-03
        tauT             1.000000000e+00      
     }
@@ -99,7 +99,7 @@ MdSimulation{
     }
 
   }
-  saveInterval            2000
+  saveInterval            1000
   saveFileName         restart
 }
 

@@ -1,0 +1,19 @@
+System:
+
+    melt of 1500 chains of 4 atoms, with angle and dihedral potentials.
+
+    Requires a version of mcSim compiled with angles (option -a) 
+    and dihedrals (-d) enabled.
+
+Usage
+----- 
+
+Here mode = nve or nvt
+
+MC simulation:
+
+    mcSim -e -p param.mode -c commands.mode
+
+Restart and extend previous simulation
+
+    mcSim -e -r restart -c commrst.mode -o rst

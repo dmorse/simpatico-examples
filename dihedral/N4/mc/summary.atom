@@ -1,0 +1,76 @@
+Monte Carlo, Atom Displacement, 10000000 (10^7) steps, 165 sec
+
+Energy:
+
+Pair        1.8846793e+03 +-  3.66e+00
+Bond        2.2911995e+03 +-  3.33e+00
+Angle       1.4941923e+03 +-  4.25e+00
+Dihedral   -2.2979828e+03 +-  3.39e+00
+Total       3.3720882e+03 +-  8.21e+00
+
+Pressure:
+
+Average     2.9161626e+00  +-  5.73e-03
+Std Dev     5.7954858e-02
+
+Radius of Gyration Squared:
+Average     7.8397457e-01  +-  4.93e-04
+Std Dev     3.3470650e-03
+
+-----------------------------------------------------------------
+Parameter file (selected components):
+
+McSimulation{
+  maskedPairPolicy              MaskBonded
+  SpeciesManager{
+
+    Homopolymer{
+      moleculeCapacity                    1500
+      nAtom                                  4
+      atomType                               0
+      bondType                               0
+      hasAngles                              1
+      angleType                              0
+      hasDihedrals                           1
+      dihedralType                           0
+    }
+
+  }
+  McSystem{
+    pairStyle                         LJPair
+    bondStyle                   HarmonicBond
+    angleStyle                 HarmonicAngle
+    dihedralStyle       MultiHarmonicDihedral
+    McPairPotential{
+      epsilon               1.000000000000e+00
+      sigma                 1.000000000000e+00
+      cutoff                1.122460000000e+00
+    }
+    BondPotential{
+      kappa                 4.000000000000e+02
+      length                1.000000000000e+00
+    }
+    AnglePotential{
+      kappa                 1.000000000000e+01
+      theta0                1.239183768916e+00
+    }
+    DihedralPotential{
+    0      0x0p+0      0x1p-1      0x0p+0      0x1p+1      0x0p+0  
+    }
+    EnergyEnsemble{
+      type                          isothermal
+      temperature           1.000000000000e+00
+    }
+    BoundaryEnsemble{
+      type                               rigid
+    }
+  }
+  McMoveManager{
+
+    AtomDisplaceMove{
+      probability           1.000000000000e+00
+      speciesId                              0
+      delta                 7.000000000000e-02
+    }
+
+  }

@@ -217,8 +217,3 @@ McSimulation{
     }
     probability             0.010000000000e+00
 
-    McEnergyOutput{
-      interval                          1000
-      outputFileName                  energy
-    }
-

@@ -83,11 +83,6 @@ McSimulation{
       speciesId                            0
     }
 
-    McEnergyOutput{
-      interval                         10000
-      outputFileName                  energy
-    }
-
     McEnergyAnalyzer{
       interval                          1000
       outputFileName               energyAve

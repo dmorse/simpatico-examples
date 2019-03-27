@@ -56,11 +56,6 @@ McSimulation{
       interval                          200000
     }
 
-    McEnergyOutput{
-      interval                           10000
-      outputFileName                    energy
-    }
-
     McEnergyAnalyzer{
       interval                           10000
       outputFileName                 energyAve

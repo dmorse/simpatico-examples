@@ -233,9 +233,4 @@ McSimulation{
       kappa10                            800.0
     }
 
-    McEnergyOutput{
-      interval                          1000
-      outputFileName                  energy
-    }
-
 

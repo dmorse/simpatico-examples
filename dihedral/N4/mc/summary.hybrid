@@ -1,0 +1,105 @@
+Hybrid MD simulation:
+
+    1000 hybrid steps of 200 MD steps each, 2450 sec run time
+
+
+--------------------------------------------------------------
+Properties:
+-----------
+
+Energy:
+
+Pair        1.8721085e+03 +-  2.11e+00
+Bond        2.2828888e+03 +-  2.31e+00
+Angle       1.4898170e+03 +-  1.72e+00
+Dihedral   -2.2772231e+03 +-  1.65e+00
+Total       3.3675912e+03 +-  5.24e+00
+
+Pressure:
+
+Average     2.9027487e+00  +-  2.68e-03
+Std Dev     6.0336678e-02
+
+Square Radius of Gyration:
+
+Average     7.8397457e-01  +-  4.93e-04
+Std Dev     3.3470650e-03
+
+--------------------------------------------------------------
+Param file (selected components):
+
+McSimulation{
+
+  maskedPairPolicy              MaskBonded
+  SpeciesManager{
+
+    Homopolymer{
+      moleculeCapacity                    1500
+      nAtom                                  4
+      atomType                               0
+    }
+
+  }
+  McSystem{
+    pairStyle                         LJPair
+    bondStyle                   HarmonicBond
+    angleStyle                 HarmonicAngle
+    dihedralStyle       MultiHarmonicDihedral
+    McPairPotential{
+      epsilon               1.000000000000e+00
+      sigma                 1.000000000000e+00
+      cutoff                1.122460000000e+00
+    }
+    BondPotential{
+      kappa                 4.000000000000e+02
+      length                1.000000000000e+00
+    }
+    AnglePotential{
+      kappa                 1.000000000000e+01
+      theta0                1.239183768916e+00
+    }
+    DihedralPotential{
+        0    0x0p+0      0x1p-1      0x0p+0      0x1p+1      0x0p+0  
+    }
+    EnergyEnsemble{
+      type                          isothermal
+      temperature           1.000000000000e+00
+    }
+    BoundaryEnsemble{
+      type                               rigid
+    }
+  }
+  McMoveManager{
+
+    HybridMdMove{
+      probability           1.000000000000e+00
+      nStep                                200
+      MdSystem{
+        MdPairPotential{
+          PairList{
+            atomCapacity                        6000
+            pairCapacity                       30000
+            skin                  3.000000000000e-01
+          }
+        }
+        NveVvIntegrator{
+          dt                    7.000000000000e-03
+        }
+      }
+    }
+
+  }
+
+--------------------------------------------------------------
+Log file (selected lines near end):
+
+endStep       1000
+nStep         1000
+run time      2.450330000000e+03 sec
+time / nStep  2.450330000000e+00 sec
+
+Move Statistics:
+
+Move Name                          Attempted    Accepted     AcceptRate
+HybridMdMove                            1000         607       0.607000
+

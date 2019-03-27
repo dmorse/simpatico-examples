@@ -78,12 +78,7 @@ McSimulation{
       interval                          2000
     }
 
-    McEnergyOutput{
-      interval                           200
-      outputFileName                  energy
-    }
-
-    McEnergyAverage{
+    McEnergyAnalyzer{
       interval                           200
       outputFileName               energyAve
       nSamplePerBlock                      1
@@ -91,7 +86,14 @@ McSimulation{
 
     McPairEnergyAverage{
       interval                           200
-      outputFileName              pairEnergy
+      outputFileName             pairAverage
+      nSamplePerBlock                      1
+      selector                           all   0   1
+    }
+   
+    McPairEnergyAnalyzer{
+      interval                           200
+      outputFileName            pairAnalyzer
       nSamplePerBlock                      1
       selector                           all   0   1
     }
@@ -136,6 +138,7 @@ McSimulation{
       hMax                                 4
       lattice                          Cubic
     }
+
     VanHove{
       interval                           100
       outputFileName                 VanHove

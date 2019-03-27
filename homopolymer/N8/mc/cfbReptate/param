@@ -62,7 +62,7 @@ McSimulation{
       outputFileName                  energy
     }
 
-    McEnergyAverage{
+    McEnergyAnalyzer{
       interval                         10000
       outputFileName               energyAve
       nSamplePerBlock                     10

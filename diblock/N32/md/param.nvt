@@ -67,9 +67,10 @@ MdSimulation{
       outputFileName                  config.
     }
 
-    MdEnergyOutput{
+    MdEnergyAnalyzer{
       interval                           100
       outputFileName                  energy
+      nSamplePerBlock                      1
     }
 
     RadiusGyration{

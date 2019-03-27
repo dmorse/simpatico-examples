@@ -81,9 +81,10 @@ McSimulation{
       interval                           100
     }
 
-    McEnergyOutput{
+    McEnergyAnalyzer{
       interval                           100
       outputFileName                  energy
+      nSamplePerBlock                      1
     }
 
   }
@@ -107,7 +108,7 @@ McSimulation{
       outputFileName            dump/config.
     }
 
-    McEnergyAverage{
+    McEnergyAnalyzer{
       interval                          1000
       outputFileName               energyAve
       nSamplePerBlock                      1

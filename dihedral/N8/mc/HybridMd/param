@@ -132,7 +132,7 @@ McSimulation{
       nTrial                         20
     }
 
-    McEnergyAverage{
+    McEnergyAnalyzer{
       interval                         10
       outputFileName               energy
       nSamplePerBlock                  10

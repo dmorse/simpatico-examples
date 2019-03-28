@@ -19,5 +19,4 @@ else
 fi
 
 # Restart simulation, write outputs to rst/
-mcSim -q -e -r restart -c commands.rst -o rst/
-
+mcSim -q -e -r restart -c commrst -o rst/

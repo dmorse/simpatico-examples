@@ -8,6 +8,8 @@ unset LOGFILE
 if [ $# -gt 0 ]; then
    LOGFILE=$1
 fi
+PARAM=param
+COMMAND=command
 
 # Make or clean directory out
 if [ ! -d "out" ]; then
@@ -18,10 +20,9 @@ fi
 
 # Run simulation
 if [ -z "$LOGFILE" ]; then
-   $EXEC -q -e -p param -c commands 
+   $EXEC -q -e -p $PARAM -c $COMMAND
 else
-   $EXEC -q -e -p param -c commands > $LOGFILE
-   mv $LOGFILE out
+   $EXEC -q -e -p $PARAM -c $COMMAND > out/$LOGFILE
 fi
 
 # Make or clean directory rst, if necessary
@@ -33,10 +34,9 @@ fi
 
 # Restart simulation, write outputs to rst/
 if [ -z "$LOGFILE" ]; then
-   $EXEC -q -e -r restart -c commands.rst -o rst/ 
+   $EXEC -q -e -r restart -c commrst -o rst/ 
 else
-   $EXEC -q -e -r restart -c commands.rst -o rst/  > $LOGFILE
-   mv $LOGFILE rst
+   $EXEC -q -e -r restart -c commrst -o rst/  > rst/$LOGFILE
 fi
 
 

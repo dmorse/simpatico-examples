@@ -91,28 +91,23 @@ McSimulation{
       interval                         10000
     }
 
-    McEnergyOutput{
-      interval                          1000
-      outputFileName                  energy
-    }
-
-    McEnergyAverage{
+    McEnergyAnalyzer{
       interval                          1000
       outputFileName               energyAve
-      nSamplePerBlock                     10
+      nSamplePerBlock                      5
     }
 
     McPairEnergyAverage{
       interval                          1000
       outputFileName              pairEnergy
-      nSamplePerBlock                     10
+      nSamplePerBlock                      5
       selector                           inter  -1  -1
     }
    
     RadiusGyration{
       interval                          1000
       outputFileName          RadiusGyration
-      nSamplePerBlock                     10
+      nSamplePerBlock                      5
       speciesId                            0
     }
 

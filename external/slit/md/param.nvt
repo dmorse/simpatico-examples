@@ -61,27 +61,19 @@ MdSimulation{
     }
   }
   AnalyzerManager{
-    baseInterval                          1000
+    baseInterval                100
 
     LogProgress{
-       interval                           5000
-    }
-    MdEnergyOutput{
-      interval                            1000
-      outputFileName                    energy
+       interval                 1000
     }
 
-    MdPotentialEnergyAverage{
-      interval                            1000
-      outputFileName        potentialEnergyAve
-      nSamplePerBlock                       20
+    MdEnergyAnalyzer{
+      interval                  100
+      outputFileName            energy
+      nSamplePerBlock           5
     }
 
-    MdKineticEnergyAverage{
-      interval                            1000
-      outputFileName          kineticEnergyAve
-      nSamplePerBlock                       20
-    }
   }
-  saveInterval                    0
+  saveInterval          1000
+  saveFileName          restart
 }

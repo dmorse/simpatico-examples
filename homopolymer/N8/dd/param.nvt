@@ -53,26 +53,29 @@ Simulation{
     seed        8012457890
   }
   AnalyzerManager{
-     baseInterval  1000
+     baseInterval  100
 
      LogEnergy{
         interval  20000
      }
 
-     OutputEnergy{
-        interval          1000
-        outputFileName  energy
+     EnergyAnalyzer{
+        interval            100
+        outputFileName      energy
+        nSamplePerBlock     5
      }
+
+     PressureAnalyzer{
+        interval            100
+        outputFileName      pressure
+        nSamplePerBlock     5
+     }
+
   }
 }
-
-    pairCapacity     40000
-    maxBoundary      orthorhombic   30.0   30.0   30.0
 
      WriteConfig{
         interval          2000
         outputFileName  config
      }
 
-  nAngleType         0
-  hasExternal        0

@@ -2,4 +2,4 @@
 rm -f */log
 rm -f */restart
 rm -f */out/*
-rm -fR */rst
+rm -f */rst/*

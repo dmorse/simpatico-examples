@@ -65,22 +65,23 @@ MdSimulation{
     
   }
   AnalyzerManager{
-    baseInterval                         1000
+    baseInterval        100
 
     LogProgress{
-      interval                          5000
+      interval            1000
     }
 
-    MdEnergyOutput{
-      interval                           1000
-      outputFileName                  energy
+    MdEnergyAnalyzer{
+      interval            100
+      outputFileName      energy
+      nSamplePerBlock     5
     }
 
-    RadiusGyration{
-      interval                           1000
-      outputFileName          RadiusGyration
-      nSamplePerBlock                     10
-      speciesId                            0
+    RadiusGyrationSq{
+      interval            1000
+      outputFileName      radiusGyration
+      nSamplePerBlock     10
+      speciesId           0
     }
 
     StructureFactorGrid{
@@ -93,19 +94,25 @@ MdSimulation{
       lattice                          cubic
     }
 
-
     VanHove{
       interval                         1000
       outputFileName                   VanHove
       atomTypeCoeffs        1.000000000000e+00   -1.000000000000e+00
       nBuffer                             100
-      nWave                                3
+      nWave                                9
       waveIntVectors                    1              0              0
-                                        0              0              1
                                         0              1              0
+                                        0              0              1
+                                        2              0              0
+                                        0              2              0
+                                        0              0              2
+                                        3              0              0
+                                        0              3              0
+                                        0              0              3
     }
+
   }
-  saveInterval          10000
+  saveInterval           2000
   saveFileName        restart
 }
 

@@ -1,0 +1,16 @@
+RESTART          6000
+SET_CONFIG_IO    MdConfigIo
+WRITE_CONFIG     config
+FINISH
+
+
+
+
+WRITE_PARAM      param
+READ_CONFIG      config
+SIMULATE         10000000
+
+
+
+
+SET_CONFIG_IO    SmpConfigIo

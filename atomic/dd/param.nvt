@@ -29,28 +29,28 @@ Simulation{
     maxBoundary       orthorhombic   36.0   36.0   36.0
   }
   EnergyEnsemble{
-    type              isothermal
-    temperature       1.0
+    type               isothermal
+    temperature        1.0
   }
   BoundaryEnsemble{
-    type              rigid
+    type               rigid
   }
   NvtIntegrator{
     dt                 0.005
     tauT               1.000
-    saveInterval        5000
-    saveFileName     restart
+    saveInterval       200
+    saveFileName       restart
   }
   Random{
-    seed              8082457890
+    seed               8082457890
   }
   AnalyzerManager{
-     baseInterval      100
+    baseInterval       10
 
-     OutputEnergy{
-        interval        1000
-        outputFileName  energy
-     }
+    OutputEnergy{
+      interval           10
+      outputFileName     energy
+    }
 
   }
 }

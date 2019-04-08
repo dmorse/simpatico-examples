@@ -1,6 +1,7 @@
 System:
 
     800 atoms with WCA (repulsive Lennard-Jones) interactions
+    NVT MD simulation, Nose-Hoover integrator
 
 Usage:
 

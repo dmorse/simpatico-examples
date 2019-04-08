@@ -3,7 +3,6 @@ Simulation{
     gridDimensions    2    2    1
   }
   FileMaster{
-    commandFileName commands
     inputPrefix     in/
     outputPrefix    out/
   }
@@ -29,6 +28,7 @@ Simulation{
   bondStyle          HarmonicBond
   externalStyle      TanhCosineExternal
   maskedPairPolicy   maskBonded
+  reverseUpdateFlag  0
   PairPotential{
     epsilon          1.00000000    1.00000000
                      1.00000000    1.00000000

@@ -123,15 +123,10 @@ McSimulation{
       outputFileName                 config.
     }
 
-    McEnergyOutput{
-      interval                          1000
-      outputFileName                  energy
-    }
-
-    McEnergyAverage{
+    McEnergyAnalyzer{
       interval                          1000
       outputFileName               energyAve
-      nSamplePerBlock                     10
+      nSamplePerBlock                      1
     }
 
     McPairEnergyAverage{

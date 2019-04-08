@@ -1,6 +1,16 @@
 #!/bin/bash
 set -ev
 
+unset EXEC
+EXEC=mcSim 
+
+unset LOGFILE
+if [ $# -gt 0 ]; then
+   LOGFILE=$1
+fi
+PARAM=param
+COMMAND=command
+
 # Make or clean directory out
 if [ ! -d "out" ]; then
    mkdir out
@@ -8,8 +18,12 @@ else
    rm -f out/*
 fi
 
-# Run simulation, write output to out/
-mcSim -q -e -p param -c commands 
+# Run simulation
+if [ -z "$LOGFILE" ]; then
+   $EXEC -q -e -p $PARAM -c $COMMAND
+else
+   $EXEC -q -e -p $PARAM -c $COMMAND > out/$LOGFILE
+fi
 
 # Make or clean directory rst, if necessary
 if [ ! -d "rst" ]; then
@@ -19,5 +33,10 @@ else
 fi
 
 # Restart simulation, write outputs to rst/
-mcSim -q -e -r restart -c commands.rst -o rst/
+if [ -z "$LOGFILE" ]; then
+   $EXEC -q -e -r restart -c commrst -o rst/ 
+else
+   $EXEC -q -e -r restart -c commrst -o rst/  > rst/$LOGFILE
+fi
+
 

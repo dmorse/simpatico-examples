@@ -1,0 +1,10 @@
+
+1) Write README statements in each directory. Remove detailed description
+from main CONTENTS file.
+
+2) Add README.md file that describes how to run simulations, with conventions
+for run script arguments.
+
+3) Fix bugs in external/lamellar and external/slit
+
+4) Check semigrand and worm examples (not yet worked through)

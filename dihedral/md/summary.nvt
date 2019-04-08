@@ -1,0 +1,76 @@
+Nose-Hoover NVT simulation:
+    dt = 0.005, tauT = 1.000
+    1000000 (10^5) steps, 1165 sec run time
+
+---------------------------------------------------------------
+Energy components:
+
+Kinetic      8.9999442e+03 +- 1.23e+00  (equipartition -> 9.0E03)
+Pair         1.8790925e+03 +- 1.07e+00
+Bond         2.2917642e+03 +- 1.52e+00
+Angle        1.4913432e+03 +- 1.01e+00
+Dihedral    -2.2784545e+03 +- 1.76e+00
+Potential    3.3837453e+03 +- 2.96e+00
+Total        1.2383690e+04 +- 3.39e+00
+
+Pressure:
+
+Average      2.9063913e+00  +-  1.77e-03
+Std Dev      5.9452487e-02
+
+Radius of Gyration:
+
+Average      7.8356256e-01  +-  2.91e-04
+Std Dev      3.7474645e-03
+
+---------------------------------------------------------------
+Param file (selected components):
+
+MdSimulation{
+  maskedPairPolicy              MaskBonded
+  SpeciesManager{
+
+    Homopolymer{
+      moleculeCapacity                    1500
+      nAtom                                  4
+    }
+
+  }
+  MdSystem{
+    pairStyle                         LJPair
+    bondStyle                   HarmonicBond
+    angleStyle                 HarmonicAngle
+    dihedralStyle       MultiHarmonicDihedral
+    MdPairPotential{
+      epsilon               1.000000000000e+00
+      sigma                 1.000000000000e+00
+      cutoff                1.122460000000e+00
+      PairList{
+        atomCapacity                        6000
+        pairCapacity                       30000
+        skin                  3.000000000000e-01
+      }
+    }
+    BondPotential{
+      kappa                 4.000000000000e+02
+      length                1.000000000000e+00
+    }
+    AnglePotential{
+      kappa                 1.000000000000e+01
+      theta0                7.100000000000e+01
+    }
+    DihedralPotential{
+      0     0.00    0.50    0.00   2.00   0.00
+    }
+    EnergyEnsemble{
+      type                          isothermal
+      temperature           1.000000000000e+00
+    }
+    BoundaryEnsemble{
+      type                               rigid
+    }
+    NvtNhIntegrator{
+      dt                    5.000000000000e-03
+      tauT                  1.000000000000e+00
+    }
+  }

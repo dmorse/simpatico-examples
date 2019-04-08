@@ -1,5 +1,5 @@
 #!/bin/bash
-rm -f */out/*
-rm -fR */rst
 rm -f */restart
 rm -f */log
+rm -f */out/*
+rm -f */rst/*

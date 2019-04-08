@@ -2,7 +2,7 @@
 set -ev
 
 unset EXEC
-EXEC="mpirun -np 4 ddSim"
+EXEC=mcSim
 
 unset LOGFILE
 MODE=nvt
@@ -13,7 +13,7 @@ if [ $# -gt 0 ]; then
    fi
 fi
 PARAM=param.$MODE
-COMMAND=command
+COMMAND=command.$MODE
 
 # Make or clean directory out
 if [ ! -d "out" ]; then
@@ -42,5 +42,4 @@ if [ -z "$LOGFILE" ]; then
 else
    $EXEC -q -e -r restart -c commrst -o rst/  > rst/$LOGFILE
 fi
-
 

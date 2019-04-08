@@ -2,17 +2,13 @@
 set -ev
 
 unset EXEC
-EXEC="mpirun -np 4 ddSim"
+EXEC="mpirun -oversubscribe -np 4 ddSim"
 
 unset LOGFILE
-MODE=nvt
 if [ $# -gt 0 ]; then
    LOGFILE=$1
-   if [ $# -gt 1 ]; then
-      MODE=$2
-   fi
 fi
-PARAM=param.$MODE
+PARAM=param
 COMMAND=command
 
 # Make or clean directory out
@@ -36,11 +32,12 @@ else
    rm -f rst/*
 fi
 
+# COMMENTED OUT UNTIL RESTART IS FIXED
 # Restart simulation, write outputs to rst/
-if [ -z "$LOGFILE" ]; then
-   $EXEC -q -e -r restart -c commrst -o rst/ 
-else
-   $EXEC -q -e -r restart -c commrst -o rst/  > rst/$LOGFILE
-fi
+#if [ -z "$LOGFILE" ]; then
+#   $EXEC -q -e -r restart -c commrst -o rst/ 
+#else
+#   $EXEC -q -e -r restart -c commrst -o rst/  > rst/$LOGFILE
+#fi
 
 

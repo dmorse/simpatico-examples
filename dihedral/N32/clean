@@ -1,4 +1,0 @@
-#!/bin/bash
-ROOT=$PWD
-cd "$ROOT/md"; ./clean
-cd "$ROOT/dd"; ./clean

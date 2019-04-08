@@ -2,7 +2,7 @@
 set -ev
 
 unset EXEC
-EXEC="mpirun -np 4 ddSim"
+EXEC="mpirun -np 6 ddSim"
 
 unset LOGFILE
 MODE=nvt

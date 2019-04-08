@@ -7,12 +7,13 @@ EXEC="mpirun -np 8 ddSim"
 unset LOGFILE
 MODE=nvt
 if [ $# -gt 0 ]; then
-   MODE=$1
+   LOGFILE=$2 
    if [ $# -gt 1 ]; then
-      LOGFILE=$2 
+      MODE=$1
    fi
 fi
 PARAM=param.$MODE
+COMMAND=command
 
 # Make or clean directory out
 if [ ! -d "out" ]; then
@@ -23,9 +24,9 @@ fi
 
 # Run simulation
 if [ -z "$LOGFILE" ]; then
-   $EXEC -q -e -p $PARAM -c command
+   $EXEC -q -e -p $PARAM -c $COMMAND
 else
-   $EXEC -q -e -p $PARAM -c command > $LOGFILE
+   $EXEC -q -e -p $PARAM -c $COMMAND > $LOGFILE
    mv $LOGFILE out
 fi
 

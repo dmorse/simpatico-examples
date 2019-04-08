@@ -1,13 +1,19 @@
 #!/bin/bash
 set -ev
 
-# Add mode suffix (e.g., "nve" or "nvt") to param file name
-MODE=nve
+unset EXEC
+EXEC=mdSim
+
+unset LOGFILE
+MODE=nvt
 if [ $# -gt 0 ]; then
-   MODE=$1
+   LOGFILE=$1
+   if [ $# -gt 1 ]; then
+      MODE=$2
+   fi
 fi
 PARAM=param.$MODE
-echo "Parameter file : " $PARAM
+COMMAND=command
 
 # Make or clean directory out
 if [ ! -d "out" ]; then
@@ -16,10 +22,14 @@ else
    rm -f out/*
 fi
 
-# Run simulation, write output to out/
-mdSim -q -e -p $PARAM -c command
+# Run simulation
+if [ -z "$LOGFILE" ]; then
+   $EXEC -q -e -p $PARAM -c $COMMAND
+else
+   $EXEC -q -e -p $PARAM -c $COMMAND > out/$LOGFILE
+fi
 
-# Make or clean directory rst
+# Make or clean directory rst, if necessary
 if [ ! -d "rst" ]; then
    mkdir rst
 else
@@ -27,4 +37,10 @@ else
 fi
 
 # Restart simulation, write outputs to rst/
-mdSim -q -e -r restart -c commrst -o rst/
+if [ -z "$LOGFILE" ]; then
+   $EXEC -q -e -r restart -c commrst -o rst/ 
+else
+   $EXEC -q -e -r restart -c commrst -o rst/  > rst/$LOGFILE
+fi
+
+

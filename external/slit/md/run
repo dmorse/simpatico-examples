@@ -2,7 +2,7 @@
 set -ev
 
 unset EXEC
-EXEC="mpirun -np 4 ddSim"
+EXEC=mdSim
 
 unset LOGFILE
 MODE=nvt
@@ -36,11 +36,13 @@ else
    rm -f rst/*
 fi
 
+# COMMENT OUT UNTIL RESTART IS FIXED
+
 # Restart simulation, write outputs to rst/
-if [ -z "$LOGFILE" ]; then
-   $EXEC -q -e -r restart -c commrst -o rst/ 
-else
-   $EXEC -q -e -r restart -c commrst -o rst/  > rst/$LOGFILE
-fi
+#if [ -z "$LOGFILE" ]; then
+#   $EXEC -q -e -r restart -c commrst -o rst/ 
+#else
+#   $EXEC -q -e -r restart -c commrst -o rst/  > rst/$LOGFILE
+#fi
 
 

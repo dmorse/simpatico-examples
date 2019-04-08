@@ -18,9 +18,9 @@ fi
 
 # Run simulation
 if [ -z "$LOGFILE" ]; then
-   $EXEC -q -e -p param -c commands 
+   $EXEC -q -e -p param -c command
 else
-   $EXEC -q -e -p param -c commands > $LOGFILE
+   $EXEC -q -e -p param -c command > $LOGFILE
    mv $LOGFILE out
 fi
 
@@ -33,9 +33,9 @@ fi
 
 # Restart simulation, write outputs to rst/
 if [ -z "$LOGFILE" ]; then
-   $EXEC -q -e -r restart -c commands.rst -o rst/ 
+   $EXEC -q -e -r restart -c commrst -o rst/ 
 else
-   $EXEC -q -e -r restart -c commands.rst -o rst/  > $LOGFILE
+   $EXEC -q -e -r restart -c commrst -o rst/  > $LOGFILE
    mv $LOGFILE rst
 fi
 

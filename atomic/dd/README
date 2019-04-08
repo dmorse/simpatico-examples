@@ -6,8 +6,8 @@ Usage:
 
 NVE md simulation on 8 processors:
 
-    mpirun -np 8 mdSim -e -p param.nve -c commands
+    mpirun -np 8 mdSim -e -p param.nve -c command
 
 Restarting and extending previous simulation:
 
-    mpirun -np 8 mdSim -e -r restart -c commands.rst
+    mpirun -np 8 mdSim -e -r restart -c commrst

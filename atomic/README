@@ -1,0 +1,8 @@
+
+Examples in this directory contain simulations of atomic liquids,
+with WCA or LJ interactions.
+
+  mc/    - 800 atoms, WCA interaction
+  md/    - 800 atoms, WCA interaction
+  dd/    - 64000 atoms, 8 processors, LJ interaction
+

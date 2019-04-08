@@ -1,0 +1,8 @@
+Subdirectories of this directory contains examples of ideal gases of flexible 
+chains. Among these are freely-jointed chains, wormlike chains, and polymers 
+with a a dihedral potential. 
+
+Requires a version of mcSim with pair interactions disabled and with angles
+and dihedrals enabled, by entering "./configure -p0 -a1 -d1" before compiling.
+          
+

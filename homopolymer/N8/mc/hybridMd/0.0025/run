@@ -9,7 +9,7 @@ else
 fi
 
 # Run simulation, write output to out/
-mcSim -q -e -p param -c commands 
+mcSim -q -e -p param -c command
 
 # Make or clean directory rst, if necessary
 if [ ! -d "rst" ]; then

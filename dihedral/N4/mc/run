@@ -6,7 +6,7 @@ if [ $# -gt 0 ]; then
    MODE=$1
 fi
 PARAM=param.$MODE
-COMMANDS=commands.$MODE
+COMMAND=command.$MODE
 COMMRST=commrst.$MODE
 echo "Parameter file : " $PARAM
 echo "Command file   : " $COMMAND
@@ -19,7 +19,7 @@ else
 fi
 
 # Run simulation, write output to out/
-mcSim -e -p $PARAM -c $COMMANDS
+mcSim -e -p $PARAM -c $COMMAND
 
 # Make or clean directory rst, if necessary
 if [ ! -d "rst" ]; then

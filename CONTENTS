@@ -10,15 +10,21 @@ dimer/, homopolymer/, diblock/, and blend/ subdirectories are designed to
 work with the default versions of the code, which provides nonbonded pair 
 and bond potentials but not angle or dihedral potentials.
 
-atomic:   Atomic liquid, with only non-bonded pair potential.
+atomic/  -   Atomic liquid, with only non-bonded pair potential.
+  mc/    - 800 atoms, WCA interaction
+  md/    - 800 atoms, WCA interaction
+  dd/    - 64000 atoms, 8 processors, LJ interaction
 
-dimer:    Liquid of diaatomic molecules, with pair and bond potentials.
+dimer/   - Liquid of diaatomic molecules, with pair and bond potentials.
+  mc/    - 10 dimers
+  md/    - 10 dimers
 
-homopolymer:
-          Liquid of flexible linear bead-spring homopolymers. 
+homopolymer/ - Liquid of flexible linear bead-spring homopolymers. 
+  N8/    - examples with 8 beads per chain
+  N32/   - examples with 32 beads per chain
+  N100/  - examples with 100 beads per chain
 
-diblock:
-          Liquid of flexible linear bead-spring diblock copolymers. 
+diblock/ - Liquid of flexible linear bead-spring diblock copolymers. 
 
 blend:    Mixtures of A and B flexible linear bead-spring polymers.
 
@@ -66,13 +72,15 @@ A directory containing an example for a simulation of a single system
 typically looks like this:
 
    param
-   commands
+   command
+   commrst
    in/
-   in/config
+     config
    out/
+   rst/
 
 The file "param" is the input parameter file, which the main executable reads 
-from standard input. The file "commands" is the command script. The file 
+from standard input. The file "command" is the command script. The file 
 "in/config" is the input configuration file. Outputs are written to the out/ 
 directory. 
 
@@ -81,7 +89,7 @@ that use different simulation algorithms, the in/ directory is further up the
 directory hierarchy, at the level of the root directories for the examples.
 
 The names of the parameter and command files may sometimes contain suffixes 
-after "param" and "commands".  Some example directories may also contain 
+after "param" and "command".  Some example directories may also contain 
 multiple parameter files with different suffixes, which allow the user to
 run several variants of an example, or run the same example using different
 versions of the program.  The meaning of different suffixes are discussed 

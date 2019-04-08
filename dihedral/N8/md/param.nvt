@@ -77,13 +77,13 @@ MdSimulation{
       nSamplePerBlock                  100
     }
 
-    MdPressureAverage{
+    MdPressureAnalyzer{
       interval                         100
       outputFileName              pressure
       nSamplePerBlock                   10
     }
 
-    RadiusGyration{
+    RadiusGyrationSq{
       interval                        1000
       outputFileName                  RgSq
       nSamplePerBlock                    1
@@ -102,6 +102,10 @@ MdSimulation{
   saveInterval             20000
   saveFileName           restart
 }
+
+
+
+
 
     CosineSqAngle{
       kappa             1.500000000000e+02

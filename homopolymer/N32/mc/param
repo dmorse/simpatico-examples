@@ -92,13 +92,13 @@ McSimulation{
       selector                           all  -1  -1
     }
    
-    McPressureAverage{
+    McPressureAnalyzer{
       interval                          1000
       outputFileName             pressureAve
       nSamplePerBlock                     10
     }
 
-    RadiusGyration{
+    RadiusGyrationSq{
       interval                          1000
       outputFileName          RadiusGyration
       nSamplePerBlock                     10

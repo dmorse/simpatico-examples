@@ -5,9 +5,9 @@ Usage:
 
 Run simulation of two independent systems on 8 processors:
 
-    mpirun -np 8 ddSim -s 2 -p param -c commands
+    mpirun -np 8 ddSim -s 2 -p param -c command
 
 Restart above simulation:
 
-    mpirun -np 8 ddSim -s 2 -r restart -c commands.rst
+    mpirun -np 8 ddSim -s 2 -r restart -c commrst
 

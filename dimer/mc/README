@@ -6,8 +6,8 @@ Usage:
 
 MC simulation:
 
-    mcSim -e -p param -c commands
+    mcSim -e -p param -c command
 
 Restarting and extending above simulations
 
-    mcSim -e -r restart -c commands.rst
+    mcSim -e -r restart -c commrst

@@ -6,7 +6,7 @@ if [ $# -gt 0 ]; then
    MODE=$1
 fi
 PARAM=param.$MODE
-COMMANDS=commands
+COMMAND=command
 COMMRST=commrst
 
 # Make or clean directory out
@@ -17,7 +17,7 @@ else
 fi
 
 # Run simulation, write output to out/
-mdSim -e -p $PARAM -c $COMMANDS
+mdSim -e -p $PARAM -c $COMMAND
 
 # Make or clean directory rst, if necessary
 if [ ! -d "rst" ]; then

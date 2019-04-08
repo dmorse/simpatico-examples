@@ -9,7 +9,7 @@ Usage:
 
 Parallel NVE md simulation on 4 processors:
 
-    mpirun -np 4 ddSim -e -p param -c commands
+    mpirun -np 4 ddSim -e -p param -c command
 
 Restarting and extending previous simulation
 

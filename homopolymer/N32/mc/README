@@ -1,8 +1,8 @@
 To run MC simulation, with log information to screen:
 
-   mcSim -e -p param -c commands
+   mcSim -e -p param -c command
 
 To restart the simulation and continue to 25000 steps
 
-   mcSim -e -r restart -c commands.rst
+   mcSim -e -r restart -c commrst
 

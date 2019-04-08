@@ -17,7 +17,7 @@ else
 fi
 
 # Run simulation, write output to out/
-mdSim -q -e -p $PARAM -c commands 
+mdSim -q -e -p $PARAM -c command
 
 # Make or clean directory rst
 if [ ! -d "rst" ]; then

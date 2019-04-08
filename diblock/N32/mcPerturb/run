@@ -7,7 +7,7 @@ rm -f 1/out/*
 rm -f 2/out/*
 
 # Run simulation, writing to out
-mpirun -np 3 mcSim_m -e -f -p param -c commands 
+mpirun -np 3 mcSim_m -e -f -p param -c command
 
 echo " "
 echo "Log file for diblock/N32/mcPerturb/0 after restart"

@@ -60,15 +60,16 @@ MdSimulation{
     }
   }
   AnalyzerManager{
-    baseInterval                        1000
+    baseInterval                         100
 
     LogProgress{
-      interval                          2000
+      interval                          1000
     }
 
-    MdEnergyOutput{
-      interval                          1000
+    MdEnergyAnalyzer{
+      interval                           100
       outputFileName                  energy
+      nSamplePerBlock                     10
     }
 
   }

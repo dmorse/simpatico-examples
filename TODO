@@ -5,6 +5,6 @@ from main CONTENTS file.
 2) Add README.md file that describes how to run simulations, with conventions
 for run script arguments.
 
-3) Fix bugs in external/lamellar and external/slit
+3) Fix bug in external/lamellar/dd 
 
 4) Check semigrand and worm examples (not yet worked through)

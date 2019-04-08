@@ -2,7 +2,7 @@
 set -ev
 
 unset EXEC
-EXEC="mpirun -oversubscribe -np 4 ddSim"
+EXEC=mcSim 
 
 unset LOGFILE
 if [ $# -gt 0 ]; then
@@ -32,7 +32,6 @@ else
    rm -f rst/*
 fi
 
-# COMMENTED OUT UNTIL RESTART IS FIXED
 # Restart simulation, write outputs to rst/
 if [ -z "$LOGFILE" ]; then
    $EXEC -q -e -r restart -c commrst -o rst/ 

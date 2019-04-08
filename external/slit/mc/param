@@ -103,5 +103,7 @@ McSimulation{
       speciesId                          0
     }
   }
-  saveInterval        0
+  saveInterval         10000
+  saveFileName         restart
 }
+

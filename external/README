@@ -1,2 +1,5 @@
 Different subdirectories contain simulations involving different types of external
 potential.
+
+ lamellar/ - layered structure of a diblock copolymer melt, induced by a periodic field
+ slit/     - homopolymer melt confined to a one-dimensional slit

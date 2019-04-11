@@ -1,75 +1,83 @@
 Simulation{
   Domain{
-    gridDimensions    2    2    1
+    gridDimensions      2    2    1
   }
   FileMaster{
-    inputPrefix     in/
-    outputPrefix    out/
+    inputPrefix         in/
+    outputPrefix        out/
   }
-  nAtomType          2
-  nBondType          1
-  hasExternal        1
-  atomTypes          A    1.0
-                     B    1.0
+  nAtomType           2
+  nBondType           1
+  hasExternal         1
+  atomTypes           A    1.0
+                      B    1.0
   AtomStorage{
-    atomCapacity       1000
-    ghostCapacity      1000
-    totalAtomCapacity  1000
+    atomCapacity        1000
+    ghostCapacity       1000
+    totalAtomCapacity   1000
   }
   BondStorage{
-    capacity          1000
-    totalCapacity     1000
+    capacity            1000
+    totalCapacity       1000
   }
   Buffer{
-    atomCapacity      1000
-    ghostCapacity     1000
+    atomCapacity        1000
+    ghostCapacity       1000
   }
-  pairStyle          LJPair
-  bondStyle          HarmonicBond
-  externalStyle      TanhCosineExternal
-  maskedPairPolicy   maskBonded
-  reverseUpdateFlag  0
+  pairStyle             LJPair
+  bondStyle             HarmonicBond
+  externalStyle         LamellarOrderingExternal
+  maskedPairPolicy      maskBonded
+  reverseUpdateFlag     0
   PairPotential{
-    epsilon          1.00000000    1.00000000
-                     1.00000000    1.00000000
-    sigma            1.00000000    1.00000000
-                     1.00000000    1.00000000
-    cutoff           1.12246205    1.12246205 
-                     1.12246205    1.12246205 
-    skin             0.4
-    pairCapacity     40000
-    maxBoundary      orthorhombic   30.0   30.0   30.0
+    epsilon             1.00000000    1.00000000
+                        1.00000000    1.00000000
+    sigma               1.00000000    1.00000000
+                        1.00000000    1.00000000
+    cutoff              1.12246205    1.12246205
+                        1.12246205    1.12246205
+    skin                0.4
+    pairCapacity        40000
+    maxBoundary         orthorhombic   30.0   30.0   30.0
   }
   BondPotential{
-    kappa            400.0
-    length           1.000
+    kappa               400.0
+    length              1.000
   }
   ExternalPotential{
-    perpDirection             2
-    prefactor                 1.000   -1.000
-    externalParameter         0.5  
-    interfaceWidth            0.2
-    periodicity               2
+    perpDirection       2
+    prefactor           1.000   -1.000
+    externalParameter   0.5
+    interfaceWidth      0.2
+    periodicity         2
   }
   EnergyEnsemble{
-    type             adiabatic
+    type                adiabatic
   }
   BoundaryEnsemble{
-    type             rigid
+    type                rigid
   }
   NveIntegrator{
-    dt               0.0050
+    dt                  0.0050
+    saveInterval        1000
+    saveFileName        restart
   }
   Random{
-    seed        8012457890
+    seed                8012457890
   }
   AnalyzerManager{
-     baseInterval  1000
+     baseInterval  100
 
-     OutputEnergy{
+     LogEnergy{
         interval         10000
-        outputFileName  energy
      }
+
+     EnergyAnalyzer{
+        interval           100
+        outputFileName     energy
+        nSamplePerBlock     10
+     }
+
   }
 }
 

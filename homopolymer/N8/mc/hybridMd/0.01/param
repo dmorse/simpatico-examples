@@ -73,20 +73,20 @@ McSimulation{
       nSamplePerBlock                      5
     }
 
-    McPairEnergyAverage{
+    McPairEnergyAnalyzer{
       interval                           100
       outputFileName              pairEnergy
       nSamplePerBlock                      5
       selector                           all  -1  -1
     }
 
-    McPressureAverage{
+    McPressureAnalyzer{
       interval                           100
       outputFileName             pressureAve
       nSamplePerBlock                      5
     }
    
-    RadiusGyration{
+    RadiusGyrationSq{
       interval                           100
       outputFileName          RadiusGyration
       nSamplePerBlock                      5

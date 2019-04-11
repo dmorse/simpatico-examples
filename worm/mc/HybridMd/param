@@ -80,13 +80,13 @@ McSimulation{
       nSamplePerBlock                 10
     }
     
-    McPressureAverage{
+    McPressureAnalyzer{
       interval                         1
       outputFileName         pressureAve
       nSamplePerBlock                 10
     }
 
-    RadiusGyration{
+    RadiusGyrationSq{
       interval                         1
       outputFileName                RgSq
       nSamplePerBlock                 10
@@ -106,20 +106,6 @@ McSimulation{
   saveInterval                        50
   saveFileName                   restart
 }
-
-    RadiusGyration{
-      interval                       10000
-      outputFileName        RadiusGyration
-      nSamplePerBlock                   10
-      speciesId                          0
-    }
-
-    McPairEnergyAverage{
-      interval                         1
-      outputFileName          pairEnergy
-      nSamplePerBlock                  1
-      selector               inter -1 -1
-    }
 
     RDF{
       interval                     8000

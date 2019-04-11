@@ -63,15 +63,10 @@ MdSimulation{
       interval                       10000
     }
 
-    MdPotentialEnergyAverage{
+    MdEnergyAnalyzer{
       interval                        1000
       outputFileName       potentialEnergy
       nSamplePerBlock                   10
-    }
-
-    MdEnergyOutput{
-      interval                       10000
-      outputFileName          energyOutput
     }
 
     MdKineticEnergyAverage{
@@ -80,13 +75,13 @@ MdSimulation{
       nSamplePerBlock                   10
     }
 
-    MdPressureAverage{
+    MdPressureAnalyzer{
       interval                         100
       outputFileName              pressure 
       nSamplePerBlock                  100
     }
 
-    RadiusGyration{
+    RadiusGyrationSq{
       interval                        1000
       outputFileName                  RgSq
       nSamplePerBlock                    1
@@ -111,15 +106,3 @@ MdSimulation{
       theta0            60.00000000000e+00
     }
 
-    MdPressureAverage{
-      interval                         100
-      outputFileName              pressure
-      nSamplePerBlock                   10
-    }
-
-    RadiusGyration{
-      interval                         100
-      outputFileName                    Rg
-      nSamplePerBlock                   10
-      speciesId                          0
-    }

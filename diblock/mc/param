@@ -91,7 +91,7 @@ McSimulation{
       selector                           all   0   1
     }
    
-    RadiusGyration{
+    RadiusGyrationSq{
       interval                           200
       outputFileName          RadiusGyration
       nSamplePerBlock                      1

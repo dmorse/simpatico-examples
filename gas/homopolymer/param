@@ -55,7 +55,7 @@ McSimulation{
       nSamplePerBlock                      100
     }
 
-    McPressureAverage{
+    McPressureAnalyzer{
       interval                           10000
       outputFileName                  pressure
       nSamplePerBlock                     1000
@@ -101,7 +101,7 @@ McSimulation{
   saveInterval               200000
   saveFileName              restart
 
-    RadiusGyration{
+    RadiusGyrationSq{
       interval                           10000
       outputFileName            RadiusGyration
       nSamplePerBlock                       10

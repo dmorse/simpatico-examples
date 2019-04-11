@@ -74,13 +74,13 @@ McSimulation{
       nSamplePerBlock                 100
     }
     
-    McPressureAverage{
+    McPressureAnalyzer{
       interval                          1
       outputFileName             pressure
       nSamplePerBlock                 100
     }
     
-    RadiusGyration{
+    RadiusGyrationSq{
       interval                         10
       outputFileName                 RgSq
       nSamplePerBlock                  10
@@ -109,19 +109,6 @@ McSimulation{
       probability      1.0000000000e+00
       speciesId                       0
       nTrial                         20
-    }
-
-    McPressureAverage{
-      interval                       10000
-      outputFileName           pressureAve
-      nSamplePerBlock                    1
-    }
-
-    RadiusGyration{
-      interval                       10000
-      outputFileName        RadiusGyration
-      nSamplePerBlock                   10
-      speciesId                          0
     }
 
     RDF{

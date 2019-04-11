@@ -75,13 +75,13 @@ MdSimulation{
       nSamplePerBlock                    4
     }
     
-    MdPressureAverage{
+    MdPressureAnalyzer{
       interval                          50
       outputFileName              pressure
       nSamplePerBlock                    4
     }
     
-    RadiusGyration{
+    RadiusGyrationSq{
       interval                         200
       outputFileName                  RgSq
       nSamplePerBlock                    1

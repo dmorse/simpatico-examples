@@ -77,7 +77,7 @@ McSimulation{
       nSamplePerBlock     10
     }
 
-    McPressureAverage{
+    McPressureAnalyzer{
       interval            10000
       outputFileName      pressure
       nSamplePerBlock     10

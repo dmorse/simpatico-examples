@@ -66,13 +66,13 @@ McSimulation{
       nSamplePerBlock                 10
     }
     
-    McPressureAverage{
+    McPressureAnalyzer{
       interval                         1
       outputFileName            pressure
       nSamplePerBlock                 10
     }
 
-    RadiusGyration{
+    RadiusGyrationSq{
       interval                         1
       outputFileName                RgSq
       nSamplePerBlock                 10
@@ -93,7 +93,7 @@ McSimulation{
   saveFileName                   restart
 }
 
-    RadiusGyration{
+    RadiusGyrationSq{
       interval                       10000
       outputFileName        RadiusGyration
       nSamplePerBlock                   10

@@ -76,7 +76,7 @@ MdSimulation{
       outputFileName            dump/config.
     }
 
-    RadiusGyration{
+    RadiusGyrationSq{
       interval                           100
       outputFileName          RadiusGyration
       nSamplePerBlock                     10

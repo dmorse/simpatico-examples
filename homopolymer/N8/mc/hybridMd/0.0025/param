@@ -1,92 +1,92 @@
 McSimulation{
   FileMaster{
-    inputPrefix                    ../../in/
-    outputPrefix                        out/ 
+    inputPrefix            ../../in/
+    outputPrefix           out/ 
   }
-  nAtomType                              1
-  nBondType                              1
-  atomTypes                              A       1.0
-  maskedPairPolicy                MaskBonded
+  nAtomType             1
+  nBondType             1
+  atomTypes             A       1.0
+  maskedPairPolicy      MaskBonded
   SpeciesManager{
 
     Homopolymer{
-      moleculeCapacity                     100
-      nAtom                                  8
-      atomType                               0
-      bondType                               0
+      moleculeCapacity    100
+      nAtom               8
+      atomType            0
+      bondType            0
     }
 
   }
   Random{
-    seed                              10732192
+    seed                10732192
   }
   McSystem{
-    pairStyle                        LJPair
-    bondStyle                  HarmonicBond
+    pairStyle           LJPair
+    bondStyle           HarmonicBond
     McPairPotential{
-      epsilon               1.000000000000e+00 
-      sigma                 1.000000000000e+00 
-      cutoff                1.122460000000e+00 
+      epsilon             1.000000000000e+00 
+      sigma               1.000000000000e+00 
+      cutoff              1.122460000000e+00 
     }
     BondPotential{
-      kappa                 2.000000000000e+03
-      length                1.000000000000e+00
+      kappa               2.000000000000e+03
+      length              1.000000000000e+00
     }
     EnergyEnsemble{
-      type                          isothermal
-      temperature              1.0000000000000 
+      type                isothermal
+      temperature         1.0000000000000 
     }
     BoundaryEnsemble{
-      type                               rigid
+      type                rigid
     }
   }
   McMoveManager{
 
     HybridMdMove{
-      probability           1.000000000000e+00
-      nStep                                 20
+      probability         1.000000000000e+00
+      nStep               20
       MdSystem{
         MdPairPotential{
           PairList{
-            atomCapacity                        1000
-            pairCapacity                        5000
-            skin                  3.000000000000e-01
+            atomCapacity      1000
+            pairCapacity      5000
+            skin              3.000000000000e-01
           }
         }
         NveVvIntegrator{
-          dt                    2.500000000000e-03
+          dt                 2.500000000000e-03
         }
       }
     }
 
   }
   AnalyzerManager{
-    baseInterval                         100
+    baseInterval          100
 
     LogProgress{
-      interval                           200
+      interval            200
     }
 
     McEnergyAnalyzer{
-      interval                           100
-      outputFileName               energyAve
-      nSamplePerBlock                     10
+      interval            100
+      outputFileName      energyAve
+      nSamplePerBlock     10
     }
 
-    McPairEnergyAverage{
-      interval                           100
-      outputFileName              pairEnergy
-      nSamplePerBlock                     10
-      selector                           all  -1  -1
+    McPairEnergyAnalyzer{
+      interval            100
+      outputFileName      pairEnergy
+      nSamplePerBlock     10
+      selector            all  -1  -1
     }
 
-    McPressureAverage{
-      interval                           100
-      outputFileName             pressureAve
-      nSamplePerBlock                     10
+    McPressureAnalyzer{
+      interval            100
+      outputFileName      pressure
+      nSamplePerBlock     10
     }
    
-    RadiusGyration{
+    RadiusGyrationSq{
       interval                           100
       outputFileName          RadiusGyration
       nSamplePerBlock                     10
@@ -132,8 +132,3 @@ McSimulation{
   saveFileName                  restart
 }
 
-
-    HarmonicTether{
-      nTetherType                            1
-      kappa                 1.000000000000e+00
-    }
